@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://scr_Scene4.gd" type="Script" id=2]
+[ext_resource path="res://scn_Main.tscn" type="PackedScene" id=3]
+
+[node name="Scene4" type="Node2D"]
+script = ExtResource( 2 )
+goto_scene = ExtResource( 3 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Button" type="Button" parent="CanvasLayer/CenterContainer"]
+margin_left = 430.0
+margin_top = 290.0
+margin_right = 594.0
+margin_bottom = 310.0
+text = "4 - Off to another Scene"
+
+[node name="Icon" type="Sprite" parent="."]
+position = Vector2( 49, 42 )
+texture = ExtResource( 1 )
+
+[connection signal="pressed" from="CanvasLayer/CenterContainer/Button" to="." method="_on_Button_pressed"]
