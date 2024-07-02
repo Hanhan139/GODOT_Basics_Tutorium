@@ -1,0 +1,90 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://shrimp-northern-prawn-L.png" type="Texture" id=1]
+[ext_resource path="res://scr_shrimp1.gd" type="Script" id=2]
+[ext_resource path="res://scr_shrimp2.gd" type="Script" id=3]
+[ext_resource path="res://scr_shrimp3.gd" type="Script" id=4]
+[ext_resource path="res://scr_shrimp4.gd" type="Script" id=5]
+[ext_resource path="res://scr_Shrimp5testing_1.gd" type="Script" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 108.087, 39.015 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 108.879, 38.0604 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 109.756, 39.6343 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 109.5, 39.5 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 96, 25 )
+
+[node name="Main" type="Node2D"]
+
+[node name="Shrimp1" type="KinematicBody2D" parent="."]
+position = Vector2( -149, 110 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Shrimp1"]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shrimp1"]
+shape = SubResource( 1 )
+
+[node name="Shrimp2" type="KinematicBody2D" parent="."]
+position = Vector2( 910, 51 )
+scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="Shrimp2"]
+modulate = Color( 0.752941, 0.964706, 0.415686, 1 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shrimp2"]
+shape = SubResource( 2 )
+disabled = true
+
+[node name="Shrimp3" type="KinematicBody2D" parent="."]
+position = Vector2( 956.008, 561.443 )
+scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="Shrimp3"]
+modulate = Color( 0.160784, 0.882353, 1, 1 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shrimp3"]
+shape = SubResource( 3 )
+disabled = true
+
+[node name="Shrimp4" type="KinematicBody2D" parent="."]
+position = Vector2( 121, 535 )
+scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="Shrimp4"]
+modulate = Color( 0.368627, 0.847059, 0.396078, 1 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shrimp4"]
+shape = SubResource( 4 )
+disabled = true
+
+[node name="Shrimp5testing" type="KinematicBody2D" parent="."]
+modulate = Color( 1, 1, 1, 0.270588 )
+show_behind_parent = true
+position = Vector2( 557, 299 )
+scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="Shrimp5testing"]
+modulate = Color( 0.0705882, 0, 0.196078, 1 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shrimp5testing"]
+shape = SubResource( 5 )
+disabled = true
